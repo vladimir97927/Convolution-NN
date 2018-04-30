@@ -14,7 +14,6 @@ namespace NN__part_4_
             NumOfPrevious = prevLayer.NumOfNeurons;
             Neurons = new List<Neuron>();
             _NeuronType = NeuronType.Hidden;
-            Weights = WeightInitialize();
             NeuronInitialize(prevLayer);
         }
 
@@ -44,26 +43,9 @@ namespace NN__part_4_
             Neurons.Last().LastNeurons = lastNeurons;
         }
 
-        private double[][] WeightInitialize()
-        {
-            double[][] weigths = new double[NumOfNeurons][];
-            for(int i = 0; i < weigths.Length; i++)
-            {
-                weigths[i] = new double[NumOfNeurons];
-            }
-            for(int i = 0; i < weigths.Length; i++)
-            {
-                for(int j = 0; j < weigths[i].Length; j++)
-                {
-                    weigths[i][j] = 0.5;
-                }
-            }
-            return weigths;
-        }
-
         public override double[] BackwardPass(double[] stuff)
         {
-
+            throw new NotImplementedException();
         }
 
         public override void Recognize(Layer nextLayer)
